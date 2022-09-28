@@ -6,9 +6,9 @@ import { isAdmin } from "../middleware/isAdmin";
 import {userSelfMod} from "../middleware/userSelfMod";
 
 export const router_User = express.Router();
-router_User.post('/users/login',uController.UserAuth); //Ok
-router_User.get('/users',authenticateJWT, isAdmin, uController.UserGet); //Ok
-router_User.post('/users',authenticateJWT, isAdmin, uController.UserPost); //Ok
-router_User.put('/users/:id', authenticateJWT ,userSelfMod, uController.UserPutByID);  //manca il middleware sulla verifica dell'id stesso e UpdateOne non funziona
-router_User.get('/users/:id',uController.UserGetByID) //Ok
-router_User.delete('/users/:id',authenticateJWT, isAdmin, uController.UserDeleteByID); //Ok
+router_User.post('/users/login',uController.UserAuth); 
+router_User.get('/users',authenticateJWT, isAdmin, uController.UserGet); 
+router_User.post('/users',authenticateJWT, isAdmin, uController.UserPost); 
+router_User.put('/users/:id', authenticateJWT ,userSelfMod, uController.UserPutByID);
+router_User.get('/users/:id',uController.UserGetByID) 
+router_User.delete('/users/:id',authenticateJWT, isAdmin, uController.UserDeleteByID); 
